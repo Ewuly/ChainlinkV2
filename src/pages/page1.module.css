@@ -191,6 +191,7 @@
   height: 34px;
 }
 .select-price {
+  z-index:4;
   border: 0;
   font-family: var(--font-roboto);
   font-size: var(--font-size-base);
@@ -242,6 +243,7 @@
   z-index: 1;
 }
 .button1 {
+  z-index:4;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -318,6 +320,7 @@
   z-index: 1;
 }
 .button3 {
+  z-index:4;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -689,4 +692,57 @@
   font-size: var(--sub-header-size);
   color: var(--color-black);
   font-family: var(--sub-header);
+}
+.buttonPerso2 {
+  z-index: 10; /* Higher index to ensure it's on top of other elements */
+  position: absolute; /* Absolute position */
+  top: 10%; /* Adjust to place the button at the desired location from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centers the button horizontally */
+  padding: 10px 20px; /* Add some padding inside the button */
+  border: 2px solid #007bff; /* Blue border to match the button fill */
+  background-color: #007bff; /* A pleasant blue color for the button */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  font-size: 1rem; /* Set the font-size */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Transition for smooth hover effect */
+}
+
+.buttonPerso2:hover {
+  background-color: #0056b3; /* A darker shade of blue for the hover state */
+  border-color: #0056b3; /* Border color changes on hover to match */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.token-details {
+  z-index: 2; /* Ensure it's above the background image */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children on the main axis */
+  align-items: center; /* Center children on the cross axis */
+  height: 100%; /* Take the full height of the parent */
+  position: absolute; /* Position it over the parent */
+  top: 30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  /* More styles as needed */
+}
+.tokenImage {
+  max-width: 100%; /* Ensures the image is responsive and fits its container */
+  max-height: 300px; /* You can set this to the desired maximum height */
+  display: block; /* Removes the default inline behavior, helping with alignment */
+  margin: 0 auto; /* Centers the image in its container */
+  z-index: 1; /* Ensures the image is above the background but below the overlay text */
+  position: relative; /* Needed for z-index to take effect */
+  border-radius: 10px; /* Optional: Rounds the corners of the image */
+  top: 23.5%;
+}
+
+.price-label {
+  display: block;
+  margin-top: 10%; /* Adjust the value as needed to move the price further down */
 }

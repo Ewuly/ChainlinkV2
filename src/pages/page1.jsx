@@ -9,13 +9,22 @@ import RectangleConnect from '../assets/RectangleConnect.svg'
 import NFT from '../assets/Cryptocurrency.svg'
 import RectangleSetPrice from '../assets/RectangleSetPrice.svg'
 
+import { ethers } from "ethers";
+import { abi, contractAddress } from "../constants.js"
 
 import styles from './page1.module.css'
 
-
-
-
 function Page1() {
+    const [connectionStatus, setConnectionStatus] = useState('Disconnected');
+
+    const [tokenId, setTokenId] = useState('');
+    const [tokenScore, setTokenScore] = useState('');
+    const [tokenImage, setTokenImage] = useState(null);
+    const [tokenName, setTokenName] = useState('');
+    const [fetchedPrice, setFetchedPrice] = useState('');
+
+    const [price, setPrice] = useState('');
+    const [ethAmount, setEthAmount] = useState('');
 
     const top = () => {
         // Scroll down 1000 pixels when the button is clicked, you can adjust the value as needed
@@ -24,6 +33,120 @@ function Page1() {
             behavior: 'smooth', // This adds a smooth scrolling effect
         });
     };
+    const handleTokenIdChange = (e) => {
+        setTokenId(e.target.value);
+    };
+
+    // Function to handle changes in the price input
+    const handlePriceChange = (e) => {
+        setPrice(e.target.value);
+    };
+
+    // Function to set the NFT price, triggered by a button click
+    const handleSetNFTPrice = async (tokenId) => {
+        await setNFTPrice(tokenId, price);
+    };
+
+    async function connect() {
+        if (typeof window.ethereum !== "undefined") {
+            try {
+                await ethereum.request({ method: "eth_requestAccounts" })
+                setConnectionStatus('Connected'); // Update button text
+                const accounts = await ethereum.request({ method: "eth_accounts" })
+                console.log(accounts)
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            setConnectionStatus('Please install MetaMask'); // Update button text
+        }
+    }
+
+    //DISPLAY NFT
+    async function fetchTokenURI(tokenId) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+
+        try {
+            const uri = await contract.tokenURI(tokenId);
+            fetchTokenDetails(uri);
+        } catch (error) {
+            console.error('Error fetching token URI:', error);
+        }
+    }
+    async function fetchTokenDetails(uri) {
+        try {
+            const response = await fetch(uri);
+            const metadata = await response.json();
+            setTokenImage(metadata.image); // Update the state with the fetched image URL
+            setTokenName(metadata.name);   // Update the state with the fetched name
+            setTokenScore(metadata.score); // Update the state with the fetched score
+        } catch (error) {
+            console.error('Error fetching token details:', error);
+        }
+    }
+    async function setNFTPrice(tokenId, price) {
+        if (typeof window.ethereum !== "undefined") {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, abi, signer);
+
+            try {
+                const signerAddress = await signer.getAddress();
+                const transactionResponse = await contract.setPrice(tokenId, ethers.utils.parseEther(price));
+                await provider.waitForTransaction(transactionResponse.hash);
+                console.log(`${signerAddress} set the price for Token ID ${tokenId}. Price: ${price} ETH`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+    async function removeTokenFromSale(tokenId) {
+        if (typeof window.ethereum !== "undefined") {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, abi, signer);
+
+            try {
+                const transactionResponse = await contract.removeTokenSale(tokenId);
+                await provider.waitForTransaction(transactionResponse.hash);
+                console.log(`Token ID ${tokenId} removed from sale.`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+    async function fetchPrice(tokenId) {
+        if (typeof window.ethereum !== "undefined") {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const contract = new ethers.Contract(contractAddress, abi, provider);
+
+            try {
+                const price = await contract.getPrice(tokenId);
+                setFetchedPrice(ethers.utils.formatEther(price));
+                console.log(`Price for Token ID ${tokenId}: ${price} Wei`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+    async function buyToken(tokenId, ethAmount) {
+        if (typeof window.ethereum !== "undefined") {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, abi, signer);
+
+            try {
+                const signerAddress = await signer.getAddress();
+                const transactionResponse = await contract.buyToken(tokenId, { value: ethers.utils.parseEther(ethAmount) });
+                await provider.waitForTransaction(transactionResponse.hash);
+                console.log(`Token ID ${tokenId} purchased by ${signerAddress} for ${ethAmount} ETH. Transaction hash: ${transactionResponse.hash}`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
 
     return (
         <>
@@ -35,7 +158,7 @@ function Page1() {
                 <div className={styles['top']}>
                     <Link to="/"><div className="denignma">Denignma</div></Link>
                     <b className={styles['my-account']}>My Account</b>
-                    <button className={styles['button']}>
+                    <button className={styles['button']} onClick={connect}>
                         <img className={styles['button-child']} alt="" src={RectangleConnect} />
                         <b className={styles['connect']}>Connect</b>
                     </button>
@@ -50,42 +173,42 @@ function Page1() {
                 </div>
                 <div className={styles['raffle']}>
                     <div className={styles['lotterie']}>
+                        <button className={styles['buttonPerso2']} onClick={() => fetchTokenURI(0)}>Fetch Token Details</button>
+                        {/* Display the token details here */}
+                        <img src={tokenImage} alt={tokenName} className={styles['tokenImage']} />
+                        <div>
+                            {/* Overlay Content */}
+                            <div className={styles['token-details']}>
+                                {tokenName && <p>Name: {tokenName}</p>}
+                                {tokenScore && <p>Score: {tokenScore}</p>}
+                            </div>
+                        </div>
+
                         <div className={styles['lotterie-child']} />
-                        <div className={styles['state-0']}>State 0</div>
-                        <div className={styles['nft-1']}>NFT 1</div>
                         <div className={styles['answer']}>
                             <div className={styles["email-grou"]}>
                                 <div className={styles["email-grou-child"]} />
                                 <input
                                     className={styles["select-price"]}
-                                    placeholder="Select Price"
+                                    placeholder="Price in AVAX"
                                     type="text"
+                                    value={price}
+                                    onChange={handlePriceChange}
                                 />
                             </div>
-                            <button className={styles["button1"]}>
+                            <button onClick={() => handleSetNFTPrice(0)} className={styles["button1"]}>
                                 <img className={styles["button-item"]} alt="" src={RectangleSetPrice} />
-                                <div className={styles["set-price"]}>Set price</div>
+                                <div className={styles['sell']}>SELL</div>
                             </button>
                         </div>
                         <div className={styles['answer1']}>
-                            <div className={styles['email-grou']}>
-                                <div className={styles['email-grou-child']} />
-                                <input
-                                    className={styles["select-price"]}
-                                    placeholder="Select Price"
-                                    type="text"
-                                />
-                            </div>
-                            <button className={styles['button2']}>
+                            <div className={styles['button3']} onClick={() => removeTokenFromSale(0)}>
                                 <img className={styles['button-item']} alt="" src={RectangleSetPrice} />
-                                <div className={styles['sell']}>SELL</div>
-                            </button>
-                            <div className={styles['button3']}>
-                                <img className={styles['button-item']} alt="" src={RectangleSetPrice} />
-                                <div className={styles['remove-sell']}>remove SELL</div>
+                                <div className={styles['remove-sell']}>Remove Sale</div>
                             </div>
                         </div>
                     </div>
+                    {/*NFT 2*/}
                     <div className={styles['lotterie1']}>
                         <div className={styles['lotterie-item']} />
                         <div className={styles['state-1']}>State 1</div>
@@ -133,24 +256,42 @@ function Page1() {
                 <div className={styles['answer2']}>
                     <div className={styles['email-grou2']}>
                         <div className={styles['email-grou-inner']} />
-                        <input className={styles['tokenid']} placeholder="Amount" type="text" />
+                        <input
+                            className={styles['tokenid']}
+                            placeholder="Token ID"
+                            type="text"
+                            value={tokenId}
+                            onChange={(e) => setTokenId(e.target.value)} />
                     </div>
                     <div className={styles['email-grou3']}>
                         <div className={styles['email-grou-inner']} />
-                        <input className={styles['tokenid']} placeholder="Amount" type="text" />
+                        <input
+                            className={styles['tokenid']}
+                            placeholder="Amount in AVAX"
+                            type="text"
+                            value={ethAmount}
+                            onChange={(e) => setEthAmount(e.target.value)} />
                     </div>
-                    <div className={styles['email-grou4']}>
+
+                    <div className={styles['email-grou4']}> {/*With button 7*/}
                         <div className={styles['email-grou-inner']} />
-                        <input className={styles['tokenid']} placeholder="Price" type="text" />
+                        <input type="number" className={styles['tokenid']} placeholder="Token ID"
+                            value={tokenId} onChange={(e) => setTokenId(e.target.value)} />
                     </div>
-                    <button className={styles['button6']}>
+                    {/*BUTTON BUY*/}
+                    <button
+                        className={styles['button6']}
+                        onClick={() => buyToken(tokenId, ethAmount)}>
                         <img className={styles['button-item']} alt="" src={RectangleSetPrice} />
                         <div className={styles['buy']}>Buy</div>
                     </button>
-                    <button className={styles['button7']}>
+
+                    {/*BUTTON FETCHPRICE*/}
+                    <button className={styles['button7']} onClick={() => fetchPrice(tokenId)} >
                         <img className={styles['button-item']} alt="" src={RectangleSetPrice} />
                         <div className={styles['fetch-price']}>Fetch Price</div>
                     </button>
+                    {fetchedPrice && <p className={styles['price-label']}>Price: {fetchedPrice} AVAX</p>}
                 </div>
                 <img className={styles['cryptocurrency-1-icon']} alt="" src={NFT} />
             </div>

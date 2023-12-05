@@ -25,20 +25,22 @@ import billetDroit from './assets/billetDroit.png'
 import winner1 from './assets/winner.png'
 import RectangleConnect from './assets/RectangleConnect.svg'
 
+import { ethers } from "ethers";
+import { abi, contractAddress } from "./constants.js"
+
 
 import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Page1 from './pages/page1.jsx'
 import Page2 from './pages/page2.jsx'
-
-
-
+import Admin from './pages/admin.jsx'
 
 import './App.css'
 
-
-
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [connectionStatus, setConnectionStatus] = useState('Disconnected'); 
+  const [raffleNumber, setRaffleNumber] = useState('');
+  const [ethAmount, setEthAmount] = useState('');
 
   const lotterie = () => {
     // Scroll down 1000 pixels when the button is clicked, you can adjust the value as needed
@@ -69,9 +71,42 @@ function App() {
     });
   };
 
+  ///////////////// CONNECTION /////////////////////
+  async function connect() {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await ethereum.request({ method: "eth_requestAccounts" })
+        setConnectionStatus('Connected'); // Update button text
+        const accounts = await ethereum.request({ method: "eth_accounts" })
+        console.log(accounts)
+      } catch (error) {
+        console.log(error)
+      }
+    } else {
+      setConnectionStatus('Please install MetaMask'); // Update button text
+    }
+  }
+  ///////////////// ENTER RAFFLE /////////////////////
+  async function enterRaffle(raffleNumber, ethAmount) {
+    if (typeof window.ethereum !== "undefined") {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+
+        try {
+            const transactionResponse = await contract.enterRaffle(raffleNumber, { value: ethers.utils.parseEther(ethAmount) });
+            await provider.waitForTransaction(transactionResponse.hash);
+                const playerAddress = await signer.getAddress();
+                console.log('#########################');
+                console.log(`Player with address ${playerAddress} entered raffle number: ${raffleNumber} with ${ethAmount} ETH`);
+            } catch (error) {
+                console.error(error);
+        }
+    }
+  }
+
   return (
     <>
-
       <Router>
         <Routes>
           <Route exact path="/" element={<>
@@ -110,29 +145,33 @@ function App() {
                 src={view}
               />
               <div className="lotterie2">
-                {/* <div className="lotterie-child" /> */}
-                <button className="button">
+                {/* <div className="lotterie-child" /> LOTTERIE2 = raffleNumber 0 */}
+                <button className="button" onClick={() => enterRaffle(0, "0.01")} >
                   <img className="button-child" alt="" src={RectangleBleu} />
                   <b className="enter">Enter</b>
                 </button>
-                <div className="eth">0.12 ETH</div>
+                <div className="eth">0.01 AVAX</div>
                 <img
                   className="unsplashpvoepplw818-icon"
                   alt=""
                   src={billetDroit}
                 />
               </div>
+              <div className="lotterie-wrapper">
+              <button className="buttonPerso1" onClick={connect}>{connectionStatus} </button>
+              </div>
+              {/*
               <button className="button2">
                 <img className="button-item" alt="" src={RectangleConnect} />
                 <b className="connect">Connect</b>
-              </button>
+              </button>*/}
               <div className="lotterie3">
                 {/* <div className="lotterie-item" /> */}
                 <button className="button1">
                   <img className="button-item" alt="" src={RectangleComing} />
                   <b className="coming-soon">Coming soon</b>
                 </button>
-                <div className="eth1">0.12 ETH</div>
+                <div className="eth1">0.1 AVAX</div>
                 <img
                   className="unsplashpvoepplw818-icon1"
                   alt=""
@@ -140,12 +179,12 @@ function App() {
                 />
               </div>
               <div className="lotterie4">
-                {/* <div className="lotterie-child" /> */}
-                <button className="button">
+                {/* <div className="lotterie-child" /> LOTTERIE4 = raffleNumber 1 */}
+                <button className="button" onClick={() => enterRaffle(1, "0.01")} >
                   <img className="button-child" alt="" src={RectangleBleu} />
                   <b className="enter">Enter</b>
                 </button>
-                <div className="eth">0.12 ETH</div>
+                <div className="eth">0.01 AVAX</div>
                 <img
                   className="unsplashpvoepplw818-icon"
                   alt=""
@@ -218,6 +257,7 @@ function App() {
           </>} />
           <Route exact path="/page1" element={<Page1 />} />
           <Route exact path="/page2" element={<Page2 />} />
+          <Route exact path="/admin" element={<Admin />} />
         </Routes>
       </Router>
 
