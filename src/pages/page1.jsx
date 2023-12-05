@@ -210,14 +210,41 @@ function Page1() {
                     </div>
                     {/*NFT 2*/}
                     <div className={styles['lotterie1']}>
+                        <button className={styles['buttonPerso2']} onClick={() => fetchTokenURI(1)}>Fetch Token Details</button>
+                        {/* Display the token details here */}
+                        <img src={tokenImage} alt={tokenName} className={styles['tokenImage']} />
+                        <div>
+                            {/* Overlay Content */}
+                            <div className={styles['token-details']}>
+                                {tokenName && <p>Name: {tokenName}</p>}
+                                {tokenScore && <p>Score: {tokenScore}</p>}
+                            </div>
+                        </div>
+
+
                         <div className={styles['lotterie-item']} />
-                        <div className={styles['state-1']}>State 1</div>
-                        <div className={styles['nft-2']}>NFT 2</div>
-                        <img
-                            className={styles['unsplashpvoepplw818-icon']}
-                            alt=""
-                            src={NFT2}
-                        />
+                        <div className={styles['answer']}>
+                            <div className={styles["email-grou"]}>
+                                <div className={styles["email-grou-child"]} />
+                                <input
+                                    className={styles["select-price"]}
+                                    placeholder="Price in AVAX"
+                                    type="text"
+                                    value={price}
+                                    onChange={handlePriceChange}
+                                />
+                            </div>
+                            <button onClick={() => handleSetNFTPrice(1)} className={styles["button1"]}> {/*TOKEN URI 1 The best is to do a loop to see all the */}
+                                <img className={styles["button-item"]} alt="" src={RectangleSetPrice} />
+                                <div className={styles['sell']}>SELL</div>
+                            </button>
+                        </div>
+                        <div className={styles['answer1']}>
+                            <div className={styles['button3']} onClick={() => removeTokenFromSale(1)}>
+                                <img className={styles['button-item']} alt="" src={RectangleSetPrice} />
+                                <div className={styles['remove-sell']}>Remove Sale</div>
+                            </div>
+                        </div>
                     </div>
                     <button className={styles['button4']}>
                         <img className={styles['button-child1']} alt="" src={RectangleEnigma} />

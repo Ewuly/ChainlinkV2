@@ -355,13 +355,13 @@
 .state-1 {
   position: absolute;
   left: calc(50% - 160px);
-  width: 318px;
+  width: 371px;
 }
 .lotterie-item {
   top: 0;
   border-radius: var(--br-lg);
   background-color: var(--color-deepskyblue);
-  height: 432.67px;
+  height: 516.6px;
 }
 .nft-2,
 .state-1 {
