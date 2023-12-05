@@ -241,7 +241,7 @@
 .button-child,
 .enter {
   top: 0;
-  width: 222.24px;
+  width: 150.24px;
   height: 93.19px;
 }
 .button-child {
@@ -273,7 +273,7 @@
   background-color: transparent;
   top: 534.18px;
   left: calc(50% - 223.11px);
-  width: 223.11px;
+  width: 273.11px;
   height: 93.19px;
 }
 .eth {
@@ -387,8 +387,8 @@
   height: 76.95px;
 }
 .eth1 {
-  top: 440.93px;
-  left: calc(50% + 216.39px);
+  top: 400.93px;
+  left: calc(50% - 50px);
   letter-spacing: 0.1em;
   line-height: 27.5px;
   text-transform: uppercase;

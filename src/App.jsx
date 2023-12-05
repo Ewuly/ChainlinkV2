@@ -166,12 +166,12 @@ function App() {
                 <b className="connect">Connect</b>
               </button>*/}
               <div className="lotterie3">
-                {/* <div className="lotterie-item" /> */}
+                {/* <div className="lotterie-item" /> 
                 <button className="button1">
                   <img className="button-item" alt="" src={RectangleComing} />
                   <b className="coming-soon">Coming soon</b>
-                </button>
-                <div className="eth1">0.1 AVAX</div>
+                </button>*/}
+                <div className="eth1">100 AVAX</div>
                 <img
                   className="unsplashpvoepplw818-icon1"
                   alt=""
@@ -205,7 +205,7 @@ function App() {
                   <button className="button4">
                     <img className="button-child1" alt="" src={RectangleEwan} />
                     <img className="winner-icon1" alt="" src={winner1} />
-                    <b className="ewan">Ewan</b>
+                    <b className="ewan">0xdf9...093</b>
                   </button>
                   <div className="lotterie-002">Lotterie #002</div>
                 </div>
@@ -214,7 +214,7 @@ function App() {
                   <button className="button4">
                     <img className="button-child1" alt="" src={RectangleMathieu} />
                     <img className="winner-icon2" alt="" src={winner1} />
-                    <b className="ewan">Marc</b>
+                    <b className="ewan">0xc29...aAf</b>
                   </button>
                   <div className="lotterie-002">Lotterie #001</div>
                 </div>
@@ -223,7 +223,7 @@ function App() {
                   <button className="button4">
                     <img className="button-child1" alt="" src={RectangleMathieu} />
                     <img className="winner-icon3" alt="" src={winner1} />
-                    <b className="ewan">Mathieu</b>
+                    <b className="ewan">0xf39...266</b>
                   </button>
                   <div className="lotterie-002">Lotterie #003</div>
                 </div>

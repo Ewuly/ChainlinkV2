@@ -160,7 +160,7 @@
   border-radius: var(--br-lg);
   background-color: var(--color-deepskyblue);
   width: 371px;
-  height: 516.6px;
+  height: 490px;
 }
 .nft-1,
 .state-0 {
@@ -285,7 +285,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  z-index: 1;
+  z-index:remove-sell 1;
 }
 .button2 {
   cursor: pointer;
@@ -338,7 +338,7 @@
 }
 .answer1 {
   position: absolute;
-  top: 408px;
+  top: 350px;
   left: 16px;
   width: 342.33px;
   height: 88px;
@@ -361,7 +361,7 @@
   top: 0;
   border-radius: var(--br-lg);
   background-color: var(--color-deepskyblue);
-  height: 516.6px;
+  height: 490px;
 }
 .nft-2,
 .state-1 {
@@ -457,8 +457,8 @@
   left: calc(50% - 159px);
   border-radius: var(--br-lg);
   background-color: var(--color-lightcoral);
-  width: 318px;
-  height: 502.61px;
+  width: 371px;
+  height: 490px;
 }
 .nft-11,
 .state-01 {
@@ -493,22 +493,22 @@
 .rectangle-div {
   position: absolute;
   top: 81px;
-  left: calc(50% - 319px);
-  width: 318px;
-  height: 502.61px;
+  left: calc(50% - 345.5px);
+  width: 371px;
+  height: 516.61px;
 }
 .rectangle-div {
   top: 0;
   left: calc(50% - 160px);
   border-radius: var(--br-lg);
   background-color: var(--color-lightcoral);
-  height: 432.67px;
+  height: 490px;
 }
 .button5,
 .lotterie3 {
   position: absolute;
   top: 81px;
-  left: calc(50% + 52px);
+  left: calc(50% + 115px);
   width: 320px;
   height: 433px;
 }
@@ -538,8 +538,8 @@
   position: absolute;
   top: 1363px;
   left: calc(50% - 556px);
-  width: 744px;
-  height: 692px;
+  width: 797px;
+  height: 740px;
   text-align: center;
 }
 .buy-tokens {
@@ -558,7 +558,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-18xl);
-  background-color: var(--color-mediumslateblue);
+  background-color: rgb(195, 223, 242);
   width: 125px;
   height: 34px;
 }
@@ -566,14 +566,14 @@
     border: 0;
     font-family: var(--font-roboto);
     font-size: var(--font-size-base);
-    background-color: transparent;
+    background: transparent;
     position: absolute;
     height: 82.35%;
     width: 92%;
     top: 8.82%;
     left: 8%;
     line-height: 31px;
-    color: black;
+    color: rgb(0, 0, 0);
     text-align: left;
     display: inline-block;
     align-items: center;
@@ -745,4 +745,124 @@
 .price-label {
   display: block;
   margin-top: 10%; /* Adjust the value as needed to move the price further down */
+}
+
+.buttonPerso3 {
+  z-index: 10; /* Higher index to ensure it's on top of other elements */
+  position: absolute;
+  top: 12%; /* Center vertically */
+  left:37%; /* Center horizontally */
+  
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.buttonPerso3:hover {
+  background-color: #0056b3; /* A darker shade of blue for the hover state */
+  border-color: #0056b3; /* Border color changes on hover to match */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+.token-details2 {
+  z-index: 3; /* Ensure it's above the background image */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children on the main axis */
+  align-items: center; /* Center children on the cross axis */
+  height: 100%; /* Take the full height of the parent */
+  position: absolute; /* Position it over the parent */
+  top: 36%;
+  right: 75px;
+  bottom: 0;
+  color: #fff;
+  /* More styles as needed */
+}
+.tokenImage2 {
+  max-width: 116%; /* Ensures the image is responsive and fits its container */
+  max-height: 400px; /* You can set this to the desired maximum height */
+  display: block; /* Removes the default inline behavior, helping with alignment */
+  margin: 0 auto; /* Centers the image in its container */
+  z-index: 1; /* Ensures the image is above the background but below the overlay text */
+  position: relative; /* Needed for z-index to take effect */
+  border-radius: 10px; /* Optional: Rounds the corners of the image */
+  top: 28%;
+}
+.token-details3 {
+  z-index: 3; /* Ensure it's above the background image */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children on the main axis */
+  align-items: center; /* Center children on the cross axis */
+  height: 100%; /* Take the full height of the parent */
+  position: absolute; /* Position it over the parent */
+  top: 37%;
+  right: 95px;
+  bottom: 0;
+  color: #fff;
+  /* More styles as needed */
+}
+.tokenImage3 {
+  max-width: 100%; /* Ensures the image is responsive and fits its container */
+  max-height: 400px; /* You can set this to the desired maximum height */
+  display: block; /* Removes the default inline behavior, helping with alignment */
+  margin: 25px; /* Centers the image in its container */
+  z-index: 1; /* Ensures the image is above the background but below the overlay text */
+  position: relative; /* Needed for z-index to take effect */
+  border-radius: 10px; /* Optional: Rounds the corners of the image */
+  top: 25%;
+}
+.answer1bis {
+  position: absolute;
+  top: 350px;
+  left: 39px;
+  width: 342.33px;
+  height: 88px;
+}
+.button-itembis {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-63xl);
+  max-width: 100%;
+  overflow: hidden;
+  height: 35px;
+  z-index: 0;
+  left: 26px;
+}
+.email-grou-childbis {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  border-radius: var(--br-18xl);
+  background-color: var(--color-mediumslateblue);
+  width: 314.11px;
+  height: 34px;
+}
+
+.token-details4 {
+  z-index: 3; /* Ensure it's above the background image */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children on the main axis */
+  align-items: center; /* Center children on the cross axis */
+  height: 100%; /* Take the full height of the parent */
+  position: absolute; /* Position it over the parent */
+  top: 43%;
+  right: 75px;
+  bottom: 0;
+  color: #fff;
+  /* More styles as needed */
+}
+.tokenImage4 {
+  max-width: 116%; /* Ensures the image is responsive and fits its container */
+  max-height: 450px; /* You can set this to the desired maximum height */
+  display: block; /* Removes the default inline behavior, helping with alignment */
+  margin: 0px; /* Centers the image in its container */
+  z-index: 1; /* Ensures the image is above the background but below the overlay text */
+  position: relative; /* Needed for z-index to take effect */
+  border-radius: 10px; /* Optional: Rounds the corners of the image */
+  top: 35%;
 }
