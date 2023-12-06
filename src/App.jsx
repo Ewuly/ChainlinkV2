@@ -52,7 +52,7 @@ function App() {
   const works = () => {
     // Scroll down 1000 pixels when the button is clicked, you can adjust the value as needed
     window.scrollTo({
-      top: 2500,
+      top: 2300,
       behavior: 'smooth', // This adds a smooth scrolling effect
     });
   };
@@ -117,12 +117,12 @@ function App() {
               <div className="slide-169-1-inner" />
               <div className="slide-169-1-inner1" />
               <div className="slide-169-1-item1" />
-
-              <b className="play-and-win">Play and win some prizes</b>
+ 
+              <b className="play-and-win">Begin your journey now</b> 
               <div className="top">
                 <button className="denignma">Denigma</button>
                 {/* <div className="lotterie">Lotterie</div> */}
-                <div className="lotterie" onClick={lotterie}>Lotterie</div>
+                <div className="lotterie" onClick={lotterie}>Sweepstakes</div>
                 <div className="how-i-works" onClick={works}>How it works</div>
                 <div className="previous-winner" onClick={winner}>Previous winner</div>
                 <Link to="/page1"><div className="my-account">my Account</div></Link>
@@ -131,13 +131,12 @@ function App() {
               <div className="bottom">
                 <Link to="/"><div className="denigma" onClick={top}>denigma</div></Link>
                 <Link to="/page1"><div className="my-account1" onClick={top}>my Account</div></Link>
-                <div className="play-lotterie">play lotterie</div>
+                <Link to="/page2"><div className="play-lotterie" onClick={top}>Sweepstakes</div></Link>
                 <img className="facebook-icon" alt="" src={Facebook} />
                 <img className="twitter-icon" alt="" src={twitter} />
-                <img className="group-icon" alt="" src={LinkedIn} />
               </div>
               <div className="lotterie-wrapper">
-                <b className="lotterie1">lotterie</b>
+                <b className="lotterie1">Sweepstakes</b>
               </div>
               <img
                 className="cryptocurrency-1-icon"
@@ -196,8 +195,8 @@ function App() {
                 <b className="discover" onClick={lotterie}>Discover</b>
               </button>
               <div className="denigma-is-the">
-                Denigma is the first dNFT’s Lotterie, buy some NFTs to try to win the
-                prize, if not, sell it to a potential winner.
+                Get involved in vibrant communities, have fun and make an impact.
+                                Embark, Evolve, Conquer!
               </div>
               <div className="previous-winner1">
                 <div className="lotterie5">
@@ -207,7 +206,7 @@ function App() {
                     <img className="winner-icon1" alt="" src={winner1} />
                     <b className="ewan">0xdf9...093</b>
                   </button>
-                  <div className="lotterie-002">Lotterie #002</div>
+                  <div className="lotterie-002">Sweepstackes #002</div>
                 </div>
                 <div className="lotterie6">
                   {/* <div className="lotterie-child1" /> */}
@@ -216,7 +215,7 @@ function App() {
                     <img className="winner-icon2" alt="" src={winner1} />
                     <b className="ewan">0xc29...aAf</b>
                   </button>
-                  <div className="lotterie-002">Lotterie #001</div>
+                  <div className="lotterie-002">Sweepstackes #001</div>
                 </div>
                 <div className="lotterie7">
                   {/* <div className="lotterie-child1" /> */}
@@ -225,14 +224,14 @@ function App() {
                     <img className="winner-icon3" alt="" src={winner1} />
                     <b className="ewan">0xf39...266</b>
                   </button>
-                  <div className="lotterie-002">Lotterie #003</div>
+                  <div className="lotterie-002">Sweepstackes #003</div>
                 </div>
                 <b className="previous-winners">Previous winners</b>
               </div>
               <div className="how-it-works">
                 <button className="button7">
                   <img className="button-child4" alt="" src={RectangleBleu} />
-                  <b className="discover1">Discover</b>
+                  <Link to="/page1"><div className="discover1" onClick={top}>Discover</div></Link>
                 </button>
                 <b className="start-your-journey">Start your journey with Denigma</b>
                 <img className="nft-4-icon" alt="" src={Step1} />
@@ -247,11 +246,11 @@ function App() {
                 <div className="step-1">Step 1</div>
                 <div className="step-2">Step 2</div>
                 <div className="step-3">Step 3</div>
-                <div className="enter-a-lotterie">Enter a lotterie by buying a NFT</div>
+                <div className="enter-a-lotterie">Enter a Sweepstackes or buy an NFT</div>
                 <div className="answer-some-enigmas">
-                  Answer some enigmas to level up your NFT
+                  Take part in quests to improve your NFT.
                 </div>
-                <div className="discover-if-you">Discover if you win the game</div>
+                <div className="discover-if-you">Find out if you've triumphed</div>
               </div>
             </div>
           </>} />

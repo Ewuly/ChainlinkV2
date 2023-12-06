@@ -110,6 +110,10 @@
   align-items: center;
   width: 115.79px;
   height: 69px;
+  background-color: transparent;
+  font-size: var(--sub-header-size);
+  font-family: var(--sub-header);
+  color: var(--color-black);
 }
 .my-account1,
 .play-lotterie {
@@ -440,7 +444,7 @@
   text-transform: capitalize;
   display: inline-block;
   text-align: left;
-  width: 170px;
+  width: 370px;
   height: 55px;
 }
 .raffle {
@@ -531,7 +535,7 @@
   text-transform: capitalize;
   display: inline-block;
   text-align: left;
-  width: 211px;
+  width: 411px;
   height: 55px;
 }
 .raffle1 {
@@ -545,7 +549,7 @@
 .buy-tokens {
   position: absolute;
   top: 2131px;
-  left: 404px;
+  left: calc(50% - 556px);
   font-size: var(--h2-size);
   line-height: 110%;
   text-transform: capitalize;

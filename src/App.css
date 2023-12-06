@@ -158,6 +158,11 @@
   align-items: center;
   width: 115.79px;
   height: 69px;
+  background-color: transparent;
+  font-size: var(--sub-header-size);
+  font-family: var(--sub-header);
+  color: var(--color-black);
+  display: inline-block;
 }
 .my-account1,
 .play-lotterie {
@@ -173,7 +178,7 @@
 .group-icon,
 .twitter-icon {
   position: absolute;
-  bottom: 16px;
+  bottom: 32px;
   left: 952.26px;
   width: 35.93px;
   height: 36px;
@@ -761,7 +766,7 @@
 }
 .how-it-works {
   position: absolute;
-  top: 2562px;
+  top: 2462px;
   left: calc(50% - 541px);
   width: 1045px;
   height: 819px;
