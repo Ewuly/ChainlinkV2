@@ -103,13 +103,13 @@ function Page2() {
                 <div className={styles['slide-169-3-child']} />
                 <div className={styles['slide-169-3-item']} />
                 <div className={styles['slide-169-3-inner']} />
-                <b className={styles['lotterie-001']}>Sweepstacke #001</b>
+                <b className={styles['lotterie-001']}>Sweepstake #001</b>
                 <div className={styles['bottom']}>
                     <Link to="/"><div className={styles['denigma']} onClick={top}>denigma</div></Link>
                     <Link to="/page1"><div className={styles['my-account']} onClick={top}>My account</div></Link>
+                    <Link to="/admin"><div className={styles['admin']} onClick={top}>admin</div></Link>
 
-
-                    <div className={styles['play-lotterie']}>play lotterie</div>
+                    <div className={styles['play-lotterie']}>Sweepstakes</div>
                     <img className={styles['facebook-icon']} alt="" src={Facebook} />
                     <img className={styles['twitter-icon']} alt="" src={twitter} />
                     <img className={styles['group-icon']} alt="" src={LinkedIn} />

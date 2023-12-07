@@ -207,7 +207,7 @@ function App() {
                     <img className="winner-icon1" alt="" src={winner1} />
                     <b className="ewan">0xdf9...093</b>
                   </button>
-                  <div className="lotterie-002">Sweepstackes #002</div>
+                  <div className="lotterie-002">Sweepstakes #002</div>
                 </div>
                 <div className="lotterie6">
                   {/* <div className="lotterie-child1" /> */}
@@ -216,7 +216,7 @@ function App() {
                     <img className="winner-icon2" alt="" src={winner1} />
                     <b className="ewan">0xc29...aAf</b>
                   </button>
-                  <div className="lotterie-002">Sweepstackes #001</div>
+                  <div className="lotterie-002">Sweepstakes #001</div>
                 </div>
                 <div className="lotterie7">
                   {/* <div className="lotterie-child1" /> */}
@@ -225,7 +225,7 @@ function App() {
                     <img className="winner-icon3" alt="" src={winner1} />
                     <b className="ewan">0xf39...266</b>
                   </button>
-                  <div className="lotterie-002">Sweepstackes #003</div>
+                  <div className="lotterie-002">Sweepstakes #003</div>
                 </div>
                 <b className="previous-winners">Previous winners</b>
               </div>
@@ -247,7 +247,7 @@ function App() {
                 <div className="step-1">Step 1</div>
                 <div className="step-2">Step 2</div>
                 <div className="step-3">Step 3</div>
-                <div className="enter-a-lotterie">Enter a Sweepstackes or buy an NFT</div>
+                <div className="enter-a-lotterie">Enter a Sweepstakes or buy an NFT</div>
                 <div className="answer-some-enigmas">
                   Take part in quests to improve your NFT.
                 </div>

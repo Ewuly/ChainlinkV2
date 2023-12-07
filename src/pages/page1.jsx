@@ -195,7 +195,7 @@ function Page1() {
                 </div>
                 <div className={styles['bottom']}>
                     <Link to="/"><div className={styles['denigma']} onClick={top}>denigma</div></Link>
-                    <Link to="/page2"><div className={styles['play-lotterie']} onClick={top}>Sweepstackes</div></Link>
+                    <Link to="/page2"><div className={styles['play-lotterie']} onClick={top}>Sweepstakes</div></Link>
                     <img className={styles['facebook-icon']} alt="" src={Facebook} />
                     <img className={styles['twitter-icon']} alt="" src={twitter} />
                     <img className={styles['group-icon']} alt="" src={LinkedIn} />
@@ -278,7 +278,7 @@ function Page1() {
                         <img className={styles['button-child1']} alt="" src={RectangleEnigma} />
                         <Link to="/page2"><b className={styles['answer-enigmas']} onClick={top}>Interact</b></Link>
                     </button>
-                    <b className={styles['raffle-1']}>Sweepstacke 1</b>
+                    <b className={styles['raffle-1']}>Sweepstake 1</b>
                 </div>
                 <div className={styles['raffle1']}>
                     {/*!!!!!!!!!!!!!!!!!!!!!NFT 3!!!!!!!!!!!!!!!!!!!!!!!*/}
@@ -362,7 +362,7 @@ function Page1() {
                         <img className={styles['button-child1']} alt="" src={RectangleEnigma} />
                         <Link to="/page2"><b className={styles['answer-enigmas']} onClick={top}>Interact</b></Link>
                     </button>
-                    <b className={styles['raffle-2']}>Sweepstacke 2</b>
+                    <b className={styles['raffle-2']}>Sweepstake 2</b>
                 </div>
 
                 <b className={styles['buy-tokens']}>Buy tokens</b>

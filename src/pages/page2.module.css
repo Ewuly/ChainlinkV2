@@ -36,6 +36,7 @@
 }
 .denigma,
 .my-account,
+.admin,
 .play-lotterie {
   position: absolute;
   top: 0;
@@ -52,13 +53,24 @@
   color: var(--color-black);
 }
 .my-account,
+.admin,
 .play-lotterie {
   left: 317px;
   width: 159px;
 }
+.admin,
 .play-lotterie {
   top: 1px;
   left: 634.84px;
+  width: 168.69px;
+}
+.play-lotterie {
+  top: 1px;
+  left: 634.84px;
+  width: 168.69px;
+}
+.admin {
+  left: 1234.84px;
   width: 168.69px;
 }
 .facebook-icon,

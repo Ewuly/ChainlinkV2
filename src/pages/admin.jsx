@@ -77,7 +77,7 @@ function Admin() {
                 <b className={styles['admin']}>Admin</b>
                 <div className={styles['bottom']}>
                     <Link to="/"><div className={styles['denigma']} onClick={top}>denigma</div></Link>
-                    <Link to="/page2"><div className={styles['play-lotterie']} onClick={top}>Sweepstackes</div></Link>
+                    <Link to="/page2"><div className={styles['play-lotterie']} onClick={top}>Sweepstakes</div></Link>
                     <Link to="/page1"><div className={styles['my-account']} onClick={top}>My account</div></Link>
                     <img className={styles['facebook-icon']} alt="" src={Facebook} />
                     <img className={styles['twitter-icon']} alt="" src={twitter} />
