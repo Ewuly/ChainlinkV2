@@ -34,6 +34,7 @@ import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Page1 from './pages/page1.jsx'
 import Page2 from './pages/page2.jsx'
 import PageAdmin from './pages/pageadmin.jsx'
+import NewPage from './pages/newPage.jsx'
 
 import './App.css'
 
@@ -258,6 +259,7 @@ function App() {
           <Route exact path="/page1" element={<Page1 />} />
           <Route exact path="/page2" element={<Page2 />} />
           <Route exact path="/pageAdmin" element={<PageAdmin />} />
+          <Route exact path="/newPage" element={<NewPage />} />
         </Routes>
       </Router>
 
