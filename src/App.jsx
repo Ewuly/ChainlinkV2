@@ -33,7 +33,7 @@ import { abi, contractAddress } from "./constants.js"
 import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Page1 from './pages/page1.jsx'
 import Page2 from './pages/page2.jsx'
-import Admin from './pages/admin.jsx'
+import PageAdmin from './pages/pageadmin.jsx'
 
 import './App.css'
 
@@ -257,7 +257,7 @@ function App() {
           </>} />
           <Route exact path="/page1" element={<Page1 />} />
           <Route exact path="/page2" element={<Page2 />} />
-          <Route exact path="/admin1" element={<Admin />} />
+          <Route exact path="/pageAdmin" element={<PageAdmin />} />
         </Routes>
       </Router>
 

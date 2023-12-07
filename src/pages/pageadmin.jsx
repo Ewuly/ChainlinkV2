@@ -11,7 +11,7 @@ import RectangleConnect from '../assets/RectangleConnect.svg'
 import { ethers } from "ethers";
 import { abi, contractAddress } from "../constants.js"
 
-function Admin() {
+function PageAdmin() {
     const [count, setCount] = useState(0)
     const [connectionStatus, setConnectionStatus] = useState('Disconnected');
     const [entranceFee, setEntranceFee] = useState('');
@@ -159,4 +159,4 @@ function Admin() {
     )
 }
 
-export default Admin
+export default PageAdmin
