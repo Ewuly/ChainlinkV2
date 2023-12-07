@@ -26,13 +26,13 @@
 .lotterie-001 {
   position: absolute;
   top: 280px;
-  left: calc(50% - 609px);
+  left: calc(50% - 40%);
   font-size: var(--h1-size);
   line-height: 110%;
   text-transform: capitalize;
   display: inline-block;
   text-align: left;
-  width: 670px;
+  width: 870px;
 }
 .denigma,
 .my-account,
@@ -46,6 +46,10 @@
   align-items: center;
   width: 115.79px;
   height: 69px;
+  background-color: transparent;
+  font-size: var(--sub-header-size);
+  font-family: var(--sub-header);
+  color: var(--color-black);
 }
 .my-account,
 .play-lotterie {
@@ -395,7 +399,7 @@
 .bet,
 .button-child {
   position: absolute;
-  top: 0;
+  top: -10px;
   width: 182.29px;
   height: 56px;
 }
@@ -424,26 +428,26 @@
   background-color: transparent;
   position: absolute;
   top: 1097px;
-  left: calc(50% + 318px);
+  left: calc(900px + 400px);
   width: 183px;
   height: 56px;
 }
 .button1,
 .button2 {
   top: 1281px;
-  left: calc(50% - 383px);
+  left: calc(400px + 200px);
 }
 .button2 {
   top: 1174px;
-  left: calc(50% + 319px);
+  left: calc(900px + 400px);
 }
 .unsplashpvoepplw818-icon {
   position: absolute;
-  top: 299px;
-  left: 1146px;
+  top: 470px;
+  left: 1060px;
   border-radius: 12px;
-  width: 247.33px;
-  height: 301.33px;
+  width: 447.33px;
+  height: 501.33px;
   object-fit: cover;
 }
 .denignma,
@@ -526,6 +530,7 @@
 }
 .container {
   margin-top: 1280px;
+  
 }
 .container input[type="number"] {
   padding: 10px;
@@ -534,6 +539,9 @@
   border-radius: 4px; /* Rounded corners */
   font-size: 16px;
 }
-
+.inputbet {
+  position: absolute;
+  left :950px;
+}
 
 

@@ -4,7 +4,7 @@ import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Facebook from '../assets/Facebook.svg'
 import twitter from '../assets/twitter.svg'
 import LinkedIn from '../assets/LinkedIn.svg'
-import Image from '../assets/Image.svg'
+import Image from '../assets/vew.png'
 import RectangleBet from '../assets/RectangleBet.svg'
 import RectangleConnect from '../assets/RectangleConnect.svg'
 
@@ -46,7 +46,7 @@ function Admin() {
 
             try {
                 await contract.createRaffle(ethers.utils.parseEther(entranceFee), interval);
-                console.log(`Raffle created with entrance fee: ${entranceFee} ETH and interval: ${interval}`);
+                console.log(`Sweepstake created with entrance fee: ${entranceFee} ETH and interval: ${interval}`);
             } catch (error) {
                 console.error(error);
             }
@@ -76,15 +76,15 @@ function Admin() {
                 <div className={styles['slide-169-4-inner']} />
                 <b className={styles['admin']}>Admin</b>
                 <div className={styles['bottom']}>
-                    <div className={styles['denigma']}>denigma</div>
-                    <div className={styles['my-account']}>My account</div>
-                    <div className={styles['play-lotterie']}>play lotterie</div>
+                    <Link to="/"><div className={styles['denigma']} onClick={top}>denigma</div></Link>
+                    <Link to="/page2"><div className={styles['play-lotterie']} onClick={top}>Sweepstackes</div></Link>
+                    <Link to="/page1"><div className={styles['my-account']} onClick={top}>My account</div></Link>
                     <img className={styles['facebook-icon']} alt="" src={Facebook} />
                     <img className={styles['twitter-icon']} alt="" src={twitter} />
                     <img className={styles['group-icon']} alt="" src={LinkedIn} />
                 </div>
                 <div className={styles['enigma']}>
-                    <b className={styles['create-raffle']}>Create raffle</b>
+                    <b className={styles['create-raffle']}>Create Sweepstake</b>
                 </div>
                 {/* INPUT ENTRANCE FEE CREATE RAFFLE*/}
                 <div className={styles['email-grou']}>
@@ -134,7 +134,7 @@ function Admin() {
                 {/* Button CREATE Raffle*/}
                 <button className={styles['button']} onClick={createRaffle}>
                     <img className={styles['button-child']} alt="" src={RectangleBet} />
-                    <b className={styles['bet']}>Create Raf</b>
+                    <b className={styles['bet']}>Create Sweep</b>
                 </button>
                 {/* Button CREATE BET*/}
                 <button className={styles['button1']} onClick={createBet}>
@@ -147,7 +147,7 @@ function Admin() {
                     src={Image}
                 />
                 <div className={styles['top']}>
-                    <div className={styles['denignma']}>Denignma</div>
+                    <Link to="/"><div className="denignma">Denignma</div></Link>
                     <button className={styles['button2']} onClick={connect}>
                         <img className={styles['button-inner']} alt="" src={RectangleConnect} />
                         <b className={styles['connect']}>Connect</b>

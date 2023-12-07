@@ -21,7 +21,8 @@ import Line from './assets/Line 2.svg'
 import view from './assets/vew.png'
 import test from './assets/teest.jpg'
 import billet from './assets/billet.png'
-import billetDroit from './assets/billetDroit.png'
+import TicketDroit from './assets/TicketDroit.png'
+import TicketGauche from './assets/TicketGauche.png'
 import winner1 from './assets/winner.png'
 import RectangleConnect from './assets/RectangleConnect.svg'
 
@@ -153,7 +154,7 @@ function App() {
                 <img
                   className="unsplashpvoepplw818-icon"
                   alt=""
-                  src={billetDroit}
+                  src={TicketDroit}
                 />
               </div>
               <div className="lotterie-wrapper">
@@ -170,7 +171,7 @@ function App() {
                   <img className="button-item" alt="" src={RectangleComing} />
                   <b className="coming-soon">Coming soon</b>
                 </button>*/}
-                <div className="eth1">100 AVAX</div>
+                <div className="eth1">10 AVAX</div>
                 <img
                   className="unsplashpvoepplw818-icon1"
                   alt=""
@@ -187,7 +188,7 @@ function App() {
                 <img
                   className="unsplashpvoepplw818-icon"
                   alt=""
-                  src={billetDroit}
+                  src={TicketGauche}
                 />
               </div>
               <button className="button3">

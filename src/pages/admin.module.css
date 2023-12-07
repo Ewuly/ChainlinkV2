@@ -45,6 +45,10 @@
   align-items: center;
   width: 115.79px;
   height: 69px;
+  background-color: transparent;
+  font-size: var(--sub-header-size);
+  font-family: var(--sub-header);
+  color: var(--color-black);
 }
 .my-account,
 .play-lotterie {
@@ -91,7 +95,7 @@
 .create-raffle,
 .enigma {
   position: absolute;
-  width: 407px;
+  width: 607px;
   height: 55px;
 }
 .create-raffle {
@@ -230,8 +234,8 @@
   top: 299px;
   left: 1146px;
   border-radius: 12px;
-  width: 247.33px;
-  height: 301.33px;
+  width: 347.33px;
+  height: 501.33px;
   object-fit: cover;
 }
 .denignma {

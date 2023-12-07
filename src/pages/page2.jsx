@@ -17,6 +17,7 @@ import { ethers } from "ethers";
 import { abi, contractAddress } from "../constants.js"
 
 import style from './page2.module.css'
+import billetDroit from '../assets/billetDroit.png'
 
 function Page2() {
     const [connectionStatus, setConnectionStatus] = useState('Disconnected');
@@ -102,7 +103,7 @@ function Page2() {
                 <div className={styles['slide-169-3-child']} />
                 <div className={styles['slide-169-3-item']} />
                 <div className={styles['slide-169-3-inner']} />
-                <b className={styles['lotterie-001']}>Lotterie #001</b>
+                <b className={styles['lotterie-001']}>Sweepstacke #001</b>
                 <div className={styles['bottom']}>
                     <Link to="/"><div className={styles['denigma']} onClick={top}>denigma</div></Link>
                     <Link to="/page1"><div className={styles['my-account']} onClick={top}>My account</div></Link>
@@ -221,7 +222,7 @@ function Page2() {
 
                 {/* UI for fetching bet details */}
                 <div className={styles['container']}>
-                    <input
+                    <input className={styles['inputbet']}
                         type="number"
                         placeholder="Bet ID"
                         value={betId}
@@ -253,7 +254,7 @@ function Page2() {
                 <img
                     className={styles['unsplashpvoepplw818-icon']}
                     alt=""
-                    src={NFT2}
+                    src={billetDroit}
                 />
                 <div className={styles['top']}>
                     <Link to="/"><div className={styles['denignma']}>Denignma</div></Link>

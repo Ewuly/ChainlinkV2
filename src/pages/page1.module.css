@@ -432,8 +432,9 @@
   padding: 0;
   background-color: transparent;
   top: 684px;
-  left: calc(50% - 159.5px);
+  left: calc(50% - 109.5px);
   width: 312px;
+  
 }
 .raffle-1 {
   position: absolute;
@@ -522,7 +523,7 @@
   padding: 0;
   background-color: transparent;
   top: 636px;
-  left: calc(50% - 128px);
+  left: calc(50% - 85px);
   width: 312px;
   height: 56px;
 }
@@ -541,7 +542,7 @@
 .raffle1 {
   position: absolute;
   top: 1363px;
-  left: calc(50% - 556px);
+  left: calc(50% - 580px);
   width: 797px;
   height: 740px;
   text-align: center;
