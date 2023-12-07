@@ -257,7 +257,7 @@ function App() {
           </>} />
           <Route exact path="/page1" element={<Page1 />} />
           <Route exact path="/page2" element={<Page2 />} />
-          <Route exact path="/admin" element={<Admin />} />
+          <Route exact path="/admin1" element={<Admin />} />
         </Routes>
       </Router>
 
